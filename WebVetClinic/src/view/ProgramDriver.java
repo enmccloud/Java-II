@@ -1,15 +1,17 @@
  /**************************************************************
-* Name        : Web Vet Clinic Application (Week 5 Assessment)
+* Name        : Web Vet Clinic Application (Week 6 Assessment)
 * Author      : Nikki McCloud
-* Created     : 9/30/20
+* Created     : 10/08/20
 * Course      : CIS 175 Java II
-* Version     : 2.0
+* Version     : 3.0
 * OS          : Windows 10
 * Copyright   : This is my own original work based on
 *               specifications issued by our instructor
-* Description : ENHANCED- Web Vet Clinic Pet List program with editable database.
-*               Input:  Pet names and corresponding medications (add, edit, remove).
-*               Output: Pet list with names and meds.
+* Description : ENHANCED 3.0- Web Vet Clinic Pet List program now has owner and 
+* 				appointment notating capability.
+*               Input:  Pet names, appts, owners, and corresponding medications 
+*               (add, edit, remove).
+*               Output: Pet list with names, appts, owner, and meds.
 * Academic Honesty: I attest that this is my original work.
 * I have not used unauthorized source code, either modified or 
 * unmodified. I have not given other fellow student(s) access to

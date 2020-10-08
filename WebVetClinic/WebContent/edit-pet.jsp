@@ -27,7 +27,7 @@
 
 	<div class="container">
 		<h2>Edit This Pet</h2>
-		<small class="text-muted">Make changes to the Pet's Name or Medication</small>
+		<small class="text-muted">Make changes to the Owner, Pet(s), or Appointment Info</small>
 		<br />
 		
 	<form action = "editPetServlet" method="post">
