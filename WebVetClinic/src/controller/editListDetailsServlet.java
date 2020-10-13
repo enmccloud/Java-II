@@ -50,7 +50,8 @@ public class editListDetailsServlet extends HttpServlet {
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		PetListDetails listToUpdate = dao.searchForPetListDetailsById(tempId);
 		
-		String newPetListName = request.getParameter("petListName");
+		String newPetListName = request.getParameter("listName");
+		System.out.println("Value in newPetListName: "+ newPetListName);
 		
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
