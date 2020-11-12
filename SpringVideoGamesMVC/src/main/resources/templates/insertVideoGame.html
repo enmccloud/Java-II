@@ -27,6 +27,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
+
 input[type=submit] {
   width: 25%;
   background-color: #437af0;
@@ -62,21 +63,84 @@ label{
   float: left;
 }
 </style>
+
+<script>
+function validation() { 
+	
+    var gameName =  
+        document.forms["Insert"]["gameName"]; 
+    
+    var numOfPlayers =  
+        document.forms["Insert"]["numOfPlayers"];
+    
+    var esrbRating =  
+        document.forms["Insert"]["esrbRating"]; 
+    
+    var genreType =  
+        document.forms["Insert"]["genre.genreType"]; 
+    
+    var consoleName =  
+        document.forms["Insert"]["console.consoleName"]; 
+
+
+    if (gameName.value == "") { 
+        window.alert("Please enter the Game Title."); 
+        gameName.focus(); 
+        return false; 
+    } 
+
+    if (numOfPlayers.value == "") { 
+        window.alert("Please enter the number of Players."); 
+        numOfPlayers.focus(); 
+        return false; 
+    } 
+
+    if (esrbRating.value == "") { 
+        window.alert("Please enter the game's ESRB Rating."); 
+        esrbRating.focus(); 
+        return false; 
+    } 
+
+    if (genreType.value == "") { 
+        window.alert("Please enter game Genre."); 
+        genreType.focus(); 
+        return false; 
+    } 
+
+    if (consoleName.value == "") { 
+        window.alert("Please enter the Console this game can be played on."); 
+        consoleName.focus(); 
+        return false; 
+    } 
+    
+    return true; 
+} 
+</script> 
+
 </head>
 	<body>
 	<br>
 	
 	<h1 style = "font-family: 'Press Start 2P', cursive; font-size: 20px; text-align: center">Insert A New Video Game</h1>
 	<br>
-		<form style = "font-family: 'Press Start 2P', cursive; font-size: 15px" th:object="${newVideoGame}" th:action="@{/update/{id}(id=${newVideoGame.id})}" method=POST>
+		<form name = "Insert" onsubmit= "return validation()" style = "font-family: 'Press Start 2P', cursive; font-size: 15px" th:object="${newVideoGame}" th:action="@{/update/{id}(id=${newVideoGame.id})}" method=POST>
 		
 			<label>Video Game Title:</label> <div id = "align"><input name="gameName" size="20" th:field="*{gameName}"></div><br />
-			<label>Number Of Players: </label><div id = "align"><input name="numOfPlayers" size="20" th:field="*{numOfPlayers}"></div><br />
-			<label>ERSB Rating: </label><div id = "align"><input name="esrbRating" size="20" th:field="*{esrbRating}"></div><br />
+			<label>Number Of Players: </label><div id = "align"><input type="number" min="1" max= "10" name="numOfPlayers" size="20" th:field="*{numOfPlayers}"></div><br />
+			<label>ERSB Rating: </label><div id = "align">
+			<select id="esrbRating" name ="esrbRating" size="1" th:field="*{esrbRating}">
+			  <option value="e">E: Everyone</option>
+			  <option value="e10">E10: Everyone 10+</option>
+			  <option value="t">T: Teen</option>
+			  <option value="m">M: Mature 17+</option>
+			  <option value="a">A: Adults Only 18+</option>
+			  <option value="rp">RP: Rating Pending</option>
+			</select>
+			</div><br />
 			<label>Genre: </label><div id = "align"><input name="genre.genreType" size="20" th:field="*{genre.genreType}"></div><br />
 			<label>Console: </label><div id = "align"><input name="console.consoleName" size="20" th:field="*{console.consoleName}"></div><br />
 
-			<br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br><br><br><br>
 			<input name="submit" type="submit" value="Submit"/>
 		</form>
 		
